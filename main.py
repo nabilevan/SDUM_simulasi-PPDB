@@ -1,6 +1,7 @@
 # Main.py (Versi NiceGUI Web Modern)
 
 from nicegui import ui
+import os
 
 # Mengambil data dari Data.py
 try:
@@ -166,4 +167,4 @@ def index():
 
 # --- JALANKAN SERVER ---
 if __name__ in {"__main__", "__mp_main__"}:
-    ui.run (title="Simulasi PPDB", host = 0.0.0.0, port=8081)
+    ui.run(title="Simulasi PPDB", host="0.0.0.0", port=int(os.environ.get("PORT", 8081)))
